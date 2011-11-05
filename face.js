@@ -58,8 +58,8 @@ app.listen(80);
 
 //twitter configs to connect to the twitter stream.
 var twit = new TwitterNode({
-    user: 'samuelteixeiras', //set your twitter user here
-    password: 'sa480112', //set your twitter pass here
+    user: 'twitterusername', //set your twitter user here
+    password: 'twitterpasword', //set your twitter pass here
     action:'filter',
     track: ['amor','odio'],  
     
@@ -90,6 +90,7 @@ twit
     .on('end', function(resp){
         //console.log('end:' + resp.statusCode);
     });
+twit.setMaxListeners(500);
 
 //Now.js initialization
 everyone  = nowjs.initialize(app);
